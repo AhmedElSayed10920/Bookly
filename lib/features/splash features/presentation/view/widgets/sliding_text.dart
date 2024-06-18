@@ -1,3 +1,4 @@
+import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
@@ -13,7 +14,7 @@ class SlidingText extends StatelessWidget {
     return AnimatedBuilder(
       animation: slidingAnimation,
       builder: (context,_)=> SlideTransition(
-          position: slidingAnimation, child: const Text('Read Free Books')),
+          position: slidingAnimation, child: const Text('Read Free Books',style: Styles.mediumTitle,)),
       
     );
   }
