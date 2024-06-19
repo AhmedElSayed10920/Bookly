@@ -1,6 +1,5 @@
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/app_router.dart';
-import 'package:booklyapp/features/splash%20features/presentation/view/spalsh_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
