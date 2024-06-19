@@ -1,5 +1,8 @@
-import 'package:booklyapp/features/home%20features/presentation/views/widgets/featured_book_list_item.dart';
+import 'package:booklyapp/core/utils/app_router.dart';
+import 'package:booklyapp/features/home%20features/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBookList extends StatelessWidget {
   const FeaturedBookList({
@@ -16,9 +19,13 @@ class FeaturedBookList extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 10,
             itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6),
-                child: FeaturedBookListItem(),
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.goBookDetailed);
+                    },
+                    child: const CustomBookImage()),
               );
             }),
       ),

@@ -1,8 +1,8 @@
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedBookListItem extends StatelessWidget {
-  const FeaturedBookListItem({
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({
     super.key,
   });
 
@@ -15,8 +15,7 @@ class FeaturedBookListItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               color: Colors.amber,
               image: const DecorationImage(
-                  image: AssetImage(AssetsData.testImage),
-                  fit: BoxFit.fill))),
+                  image: AssetImage(AssetsData.testImage), fit: BoxFit.fill))),
     );
   }
 }
