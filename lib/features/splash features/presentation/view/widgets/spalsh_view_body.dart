@@ -1,9 +1,8 @@
-import 'package:booklyapp/constants.dart';
+import 'package:booklyapp/core/utils/app_router.dart';
 import 'package:booklyapp/core/utils/assets.dart';
-import 'package:booklyapp/features/home%20features/presentation/views/home_view.dart';
 import 'package:booklyapp/features/splash%20features/presentation/view/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({
@@ -46,10 +45,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   Future<dynamic> navigateToHomeView() {
-    return Future.delayed(
-        const Duration(seconds: 2),
-        () => Get.to(() => const HomeView(),
-            transition: Transition.fade, duration: kTransitionDuration));
+    return Future.delayed(const Duration(seconds: 2),
+        () => GoRouter.of(context).push(AppRouter.goHome)
+        // Get.to(
+        //   () => const HomeView(),
+        //   transition: Transition.fade,
+        //   duration: kTransitionDuration,
+        // ),
+        );
   }
 
   void initSlidingAnimation() {

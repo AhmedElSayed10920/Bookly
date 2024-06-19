@@ -7,17 +7,14 @@ class BestSellerListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        children: [
-          BestSellerItemImage(),
-          SizedBox(
-            width: 30,
-          ),
-          BestSellerBooksInfo()
-        ],
-      ),
+    return const Row(
+      children: [
+        BestSellerItemImage(),
+        SizedBox(
+          width: 30,
+        ),
+        BestSellerBooksInfo()
+      ],
     );
   }
 }

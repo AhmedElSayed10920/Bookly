@@ -9,7 +9,7 @@ class FeaturedBookList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30,top: 24),
+      padding: const EdgeInsets.only(top: 24),
       child: SizedBox(
         height: MediaQuery.of(context).size.height * .3,
         child: ListView.builder(
@@ -17,7 +17,7 @@ class FeaturedBookList extends StatelessWidget {
             itemCount: 10,
             itemBuilder: (context, index) {
               return const Padding(
-                padding: EdgeInsets.only(right: 12.0),
+                padding: EdgeInsets.symmetric(horizontal: 6),
                 child: FeaturedBookListItem(),
               );
             }),
