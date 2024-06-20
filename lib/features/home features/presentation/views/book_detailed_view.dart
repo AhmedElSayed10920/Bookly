@@ -11,6 +11,3 @@ class BookDetailedView extends StatelessWidget {
     );
   }
 }
-
-
-
