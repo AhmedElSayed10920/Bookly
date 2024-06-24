@@ -1,3 +1,4 @@
+import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/app_router.dart';
 import 'package:booklyapp/core/widgets/custom_progress_indicator.dart';
 import 'package:booklyapp/core/widgets/error_message.dart';
@@ -35,8 +36,8 @@ class FeaturedBookList extends StatelessWidget {
                           },
                           child: CustomBookImage(
                             imageUrl: state.books[index].volumeInfo!.imageLinks!
-                                    .thumbnail ??
-                                'https://images.thenile.io/r1000/9780321958327.jpg',
+                                    .thumbnail ?? networkImage
+                                ,
                           )),
                     );
                   }),

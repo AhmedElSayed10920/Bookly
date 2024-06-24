@@ -17,7 +17,7 @@ class SearchListView extends StatelessWidget {
             onTap: () {
               GoRouter.of(context).push(AppRouter.goBookDetailed);
             },
-            child: const BestSellerListItem()),
+            child: Text('data')),
       ),
     );
   }

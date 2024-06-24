@@ -29,7 +29,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 30),
                 child: Text(
-                  'Best Seller',
+                  'Newest Books',
                   style: Styles.textStyle18,
                 ),
               ),
@@ -41,7 +41,8 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverFillRemaining(
           child: BooksListView(),
-        )
+        ),
+       
       ],
     );
   }

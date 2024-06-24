@@ -16,7 +16,9 @@ class BookDetailsScrollSection extends StatelessWidget {
         const CustomBookDetailedAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .23),
-          child: const CustomBookImage(imageUrl: 'https://images.thenile.io/r1000/9780321958327.jpg',),
+          child: const CustomBookImage(
+            imageUrl: 'https://images.thenile.io/r1000/9780321958327.jpg',
+          ),
         ),
         const SizedBox(
           height: 43,
@@ -45,6 +47,8 @@ class BookDetailsScrollSection extends StatelessWidget {
         ),
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
+          rating: 3,
+          count: 300,
         ),
         const SizedBox(
           height: 37,
