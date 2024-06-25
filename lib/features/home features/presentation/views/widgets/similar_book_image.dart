@@ -1,8 +1,9 @@
-import 'package:booklyapp/core/utils/assets.dart';
+import 'package:booklyapp/features/home%20features/data/models/books_model/books_model.dart';
 import 'package:flutter/material.dart';
 
 class SimilarBookImage extends StatelessWidget {
-  const SimilarBookImage({super.key});
+  const SimilarBookImage({super.key, required this.book});
+  final BooksModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,10 @@ class SimilarBookImage extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.amber,
-              image: const DecorationImage(
-                  image: AssetImage(AssetsData.testImage), fit: BoxFit.fill))),
+              image: DecorationImage(
+                  image:
+                      NetworkImage('${book.volumeInfo!.imageLinks!.thumbnail}'),
+                  fit: BoxFit.fill))),
     );
   }
 }

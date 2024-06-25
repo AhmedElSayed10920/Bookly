@@ -1,4 +1,5 @@
 import 'package:booklyapp/core/utils/styles.dart';
+import 'package:booklyapp/features/home%20features/data/models/books_model/books_model.dart';
 import 'package:booklyapp/features/home%20features/presentation/views/widgets/book_actions.dart';
 import 'package:booklyapp/features/home%20features/presentation/views/widgets/book_rating.dart';
 import 'package:booklyapp/features/home%20features/presentation/views/widgets/custom_book_detailed_app_bar.dart';
@@ -6,7 +7,8 @@ import 'package:booklyapp/features/home%20features/presentation/views/widgets/cu
 import 'package:flutter/material.dart';
 
 class BookDetailsScrollSection extends StatelessWidget {
-  const BookDetailsScrollSection({super.key});
+  const BookDetailsScrollSection({super.key, required this.book});
+  final BooksModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +18,20 @@ class BookDetailsScrollSection extends StatelessWidget {
         const CustomBookDetailedAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .23),
-          child: const CustomBookImage(
-            imageUrl: 'https://images.thenile.io/r1000/9780321958327.jpg',
+          child:  CustomBookImage(
+            imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
           ),
         ),
         const SizedBox(
           height: 43,
         ),
         Text(
-          'The Jungle Book',
+          book.volumeInfo!.title!,
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.bold,
+            
           ),
+          textAlign:TextAlign.center,
         ),
         const SizedBox(
           height: 6,
@@ -35,7 +39,7 @@ class BookDetailsScrollSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            'Rudyard Kipling',
+            book.volumeInfo!.authors![0],
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,

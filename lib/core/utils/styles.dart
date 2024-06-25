@@ -14,7 +14,7 @@ abstract class Styles {
     color: Colors.white,
   );
   static const textStyle30 = TextStyle(
-      fontSize: 30,
+      fontSize: 25,
       fontWeight: FontWeight.w900,
       color: Colors.white,
       fontFamily: kFontFamily);

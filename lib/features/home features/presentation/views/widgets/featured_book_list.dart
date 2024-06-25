@@ -32,12 +32,14 @@ class FeaturedBookList extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 6),
                       child: GestureDetector(
                           onTap: () {
-                            GoRouter.of(context).push(AppRouter.goBookDetailed);
+                            GoRouter.of(context).push(AppRouter.goBookDetailed,
+                            extra: state.books[index]
+                                );
                           },
                           child: CustomBookImage(
                             imageUrl: state.books[index].volumeInfo!.imageLinks!
-                                    .thumbnail ?? networkImage
-                                ,
+                                    .thumbnail ??
+                                networkImage,
                           )),
                     );
                   }),

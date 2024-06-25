@@ -19,7 +19,7 @@ class BookActions extends StatelessWidget {
                   topLeft: Radius.circular(16),
                   bottomLeft: Radius.circular(16)),
               textColor: Colors.black,
-              text: '19.19 \$',
+              text: 'Free',
             ),
           ),
           Expanded(
