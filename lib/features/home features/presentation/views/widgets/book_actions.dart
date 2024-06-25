@@ -1,18 +1,21 @@
+import 'package:booklyapp/core/utils/functions/launch_url.dart';
+import 'package:booklyapp/features/home%20features/data/models/books_model/books_model.dart';
 import 'package:booklyapp/features/home%20features/presentation/views/widgets/book_actions_button.dart';
 import 'package:flutter/material.dart';
 
 class BookActions extends StatelessWidget {
   const BookActions({
-    super.key,
+    super.key, required this.booksModel,
   });
+  final BooksModel booksModel;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: BookActionButton(
               backgroundColor: Colors.white,
               borderRadius: BorderRadius.only(
@@ -24,8 +27,11 @@ class BookActions extends StatelessWidget {
           ),
           Expanded(
             child: BookActionButton(
-              backgroundColor: Color(0xffef8262),
-              borderRadius: BorderRadius.only(
+              onPressed: () {
+                launchCustomUrl(context, booksModel.volumeInfo!.previewLink);
+              },
+              backgroundColor: const Color(0xffef8262),
+              borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(16),
                   bottomRight: Radius.circular(16)),
               textColor: Colors.white,

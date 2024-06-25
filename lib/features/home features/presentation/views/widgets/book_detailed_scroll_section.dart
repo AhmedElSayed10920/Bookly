@@ -18,7 +18,7 @@ class BookDetailsScrollSection extends StatelessWidget {
         const CustomBookDetailedAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .23),
-          child:  CustomBookImage(
+          child: CustomBookImage(
             imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
           ),
         ),
@@ -29,9 +29,8 @@ class BookDetailsScrollSection extends StatelessWidget {
           book.volumeInfo!.title!,
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.bold,
-            
           ),
-          textAlign:TextAlign.center,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
@@ -57,7 +56,9 @@ class BookDetailsScrollSection extends StatelessWidget {
         const SizedBox(
           height: 37,
         ),
-        const BookActions(),
+        BookActions(
+          booksModel: book,
+        ),
       ],
     );
   }
